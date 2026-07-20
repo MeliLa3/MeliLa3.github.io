@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Arte de MeliLa3</title>
+    <style>
+        /* Estilos generales del lienzo */
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        h1 {
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+        }
+        /* Cuadrícula interactiva */
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        /* Bloque de cada obra */
+        .obra-artistica {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            background-color: #fff;
+            aspect-ratio: 1 / 1;
+            cursor: pointer;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        /* Efecto interactivo al pasar el ratón (Hover) */
+        .obra-artistica:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+        .obra-artistica img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .obra-artistica:hover img {
+            transform: scale(1.08); /* Zoom interactivo de la imagen */
+        }
+        /* Texto descriptivo oculto que aparece al interactuar */
+        .info-obra {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            text-align: left;
+        }
+        .obra-artistica:hover .info-obra {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>MeliLa3 • Galería de Arte</h1>
+
+    <div class="galeria">
+        <!-- Espacio para la Obra 1 -->
+        <div class="obra-artistica">
+            <img src="https://picsum.photos" alt="Mi primera obra">
+            <div class="info-obra">
+                <h3>Título de la Obra 1</h3>
+                <p>Digital / 2026</p>
+            </div>
+        </div>
+
+        <!-- Espacio para la Obra 2 -->
+        <div class="obra-artistica">
+            <img src="https://picsum.photos" alt="Mi segunda obra">
+            <div class="info-obra">
+                <h3>Título de la Obra 2</h3>
+                <p>Acuarela / 2026</p>
+            </div>
+        </div>
+
+        <!-- Espacio para la Obra 3 -->
+        <div class="obra-artistica">
+            <img src="https://picsum.photos" alt="Mi tercera obra">
+            <div class="info-obra">
+                <h3>Título de la Obra 3</h3>
+                <p>Boceto / 2026</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
